@@ -23,10 +23,4 @@ module.exports = (sequelize) => {
             type: DataTypes.ENUM("active", "inactive", "refused"),
         }
     });
-
-  // Defino la relación uno a uno con la tabla Users
-  Partners.hasOne(sequelize.models.Users, { foreignKey: 'user_id' });
-  sequelize.models.Users.belongsTo(Partners, { foreignKey: 'user_id' });
-
-  return Partners;
 };
