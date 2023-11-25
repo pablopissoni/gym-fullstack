@@ -52,7 +52,11 @@ module.exports = (sequelize) => {
     },
     number: {
         type: DataTypes.STRING,
-        allowNull: false,
-    }
+        // allowNull: false,
+    },
+    validity: {
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW,
+    },
   });
 }

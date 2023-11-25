@@ -94,11 +94,18 @@ const putUser = async (req, res) => {
         },
       }
     );
-
+      console.log('user', user)
+    if( user[0] === 1){
       console.log('El usuario se actualizo correctamente')
       return res.status(200).json({
         message: 'El usuario se actualizo correctamente'
       })
+    }else{
+      console.log('Ocurrio un error o el usuario no existe')
+      return res.status(400).json({
+        message: 'El usuario parece no existir'
+      })
+  }
 
   } catch (error){
     console.log('Error al actualizar el usuario: ', error)
